@@ -1,0 +1,107 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #eaf6ff, #d7eaff);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #0077b6;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+}
+
+footer {
+  background: #023e8a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+button {
+  background-color: #00b4d8;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0077b6;
+}
+
+.link {
+  display: block;
+  margin-top: 10px;
+  color: #0077b6;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.alert {
+  color: red;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.doctor-controls button {
+  margin-right: 10px;
+}
+
+.queue {
+  margin-top: 1rem;
+}
+
+.queue-item {
+  background: #f0f8ff;
+  padding: 0.6rem;
+  border-left: 5px solid #00b4d8;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}

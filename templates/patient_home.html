@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="card">
+  <h2><i class="fas fa-clipboard-list"></i> 掛號報到</h2>
+  {% if allow_register %}
+  <form method="POST">
+    <select name="department" required>
+      <option value="" disabled selected>請選擇科別</option>
+      <option>內科</option>
+      <option>外科</option>
+      <option>耳鼻喉科</option>
+      <option>皮膚科</option>
+    </select>
+    <textarea name="symptoms" placeholder="請描述病情" required></textarea>
+    <button type="submit"><i class="fas fa-ticket-alt"></i> 取得號碼牌</button>
+  </form>
+  {% else %}
+  <p class="alert"><i class="fas fa-ban"></i> 目前醫師暫停掛號，請稍候...</p>
+  {% endif %}
+</div>
+{% endblock %}
