@@ -1,26 +1,38 @@
 body {
   font-family: 'Noto Sans TC', sans-serif;
   margin: 0;
-  background: linear-gradient(to bottom, #eaf6ff, #d7eaff);
+  background: linear-gradient(to bottom, #f0faff, #e2f1ff);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 header {
-  background-color: #0077b6;
+  background: #0077b6;
   color: white;
   padding: 1rem;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 main {
   flex: 1;
+  padding: 2rem;
   display: flex;
   justify-content: center;
-  align-items: start;
-  padding: 2rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 footer {
@@ -35,13 +47,16 @@ footer {
   background: white;
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 500px;
-  animation: fadeIn 0.5s ease-in-out;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.4s ease-in-out;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 0.7rem;
   margin: 10px 0;
@@ -71,37 +86,82 @@ button:hover {
   background-color: #0077b6;
 }
 
+.cancel-btn {
+  background-color: #ff6b6b;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  margin-left: 10px;
+  border-radius: 6px;
+}
+
 .link {
   display: block;
   margin-top: 10px;
   color: #0077b6;
   text-align: right;
   font-size: 0.9rem;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background: #f2f9ff;
+  padding: 0.6rem;
+  margin: 5px 0;
+  border-left: 5px solid #00b4d8;
+  border-radius: 5px;
 }
 
 .alert {
-  color: red;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.doctor-controls button {
-  margin-right: 10px;
-}
-
-.queue {
+  color: #e63946;
+  background: #ffecec;
+  padding: 10px;
+  border-radius: 8px;
   margin-top: 1rem;
+  text-align: center;
 }
 
-.queue-item {
-  background: #f0f8ff;
-  padding: 0.6rem;
-  border-left: 5px solid #00b4d8;
-  margin-bottom: 0.5rem;
-  border-radius: 6px;
+.flash {
+  background: #caf0f8;
+  color: #0077b6;
+  padding: 0.7rem 1rem;
+  margin: 1rem auto;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px);}
-  to { opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  nav {
+    font-size: 0.9rem;
+  }
 }

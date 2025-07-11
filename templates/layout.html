@@ -1,25 +1,34 @@
-<!-- templates/layout.html -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>醫院系統</title>
-  <link rel="stylesheet" href="/static/css.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
   <header>
     <h1><i class="fas fa-hospital"></i> 醫院掛號系統</h1>
+    <nav>
+      <a href="/">🏠 首頁</a>
+      <a href="/doctor">🩺 醫生</a>
+      <a href="/admin">🛡️ 管理</a>
+      <a href="/logout">🚪 登出</a>
+    </nav>
   </header>
   <main>
-    {% block content %}{% endblock %}
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash">
+        {% for message in messages %}
+          {{ message }}
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
   </main>
-<footer>
-  <div class="footer-links"></div>
-  <footer>© 2025 醫院系統 - Nexelink 開發</footer>
-  <a href="/templates/doctor_home.html"></i> 醫生叫號系統/a>
-</footer>
-<script src="/static/js.js"></script>
+  <footer>© 2025 醫院系統</footer>
 </body>
 </html>

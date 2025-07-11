@@ -1,21 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="card">
-  <h2><i class="fas fa-user-md"></i> 醫生叫號系統</h2>
-  <form method="POST" class="doctor-controls">
-    <button name="next" type="submit"><i class="fas fa-forward"></i> 下一位</button>
-    <button name="stop" type="submit"><i class="fas fa-stop-circle"></i> 止掛</button>
-    <button name="resume" type="submit"><i class="fas fa-play-circle"></i> 繼續掛號</button>
+  <h2>🩺 醫生叫號系統</h2>
+  <form method="POST">
+    <button name="next">▶️ 下一位</button>
+    <button name="stop">⛔ 停止掛號</button>
+    <button name="resume">✅ 繼續掛號</button>
   </form>
-  <div class="queue">
-    <h3>等待名單</h3>
-    {% for p in waiting %}
-      <div class="queue-item">
-        <i class="fas fa-user"></i> {{ p[1] }} | {{ p[2] }} | {{ p[3] }}
-      </div>
+  <h3>⏱️ 目前叫號：第 {{ current_number }} 號</h3>
+</div>
+
+<div class="card">
+  <h3>📋 等候病患名單</h3>
+  <ul>
+    {% for id, name, dept, symptom in waiting %}
+      <li>👤 {{ name }} - {{ dept }} - {{ symptom }}</li>
     {% else %}
-      <p>目前沒有病人排隊。</p>
+      <p>目前沒有病人等待中。</p>
     {% endfor %}
-  </div>
+  </ul>
 </div>
 {% endblock %}
